@@ -58,3 +58,13 @@ func TestDeal(t *testing.T){
 		t.Errorf("Expected stack %v, got %v", expectedStack, resultStack)
 	}
 }
+
+func TestShuffle(t* testing.T){
+	d := newDeck()
+
+	d.shuffleDeck()
+
+	if reflect.DeepEqual(d, fullOrderedDeck) {
+		t.Errorf("Expected deck to be different of %v", fullOrderedDeck)
+	}
+}
